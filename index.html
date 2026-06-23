@@ -3,384 +3,222 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SunPower Enerji — Solar Enerji Firması</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<title>SunPower Enerji — Solar Güneş Sistemi</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a2010;--accent:#f9a825;--font:'Roboto',sans-serif;}
+:root{--dark:#070e07;--mid:#0d1f0d;--card:#122012;--yellow:#f9a825;--lime:#aeea00;--font:'Barlow',sans-serif;--cond:'Barlow Condensed',sans-serif;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:#f0f0f0;font-family:var(--font);overflow-x:hidden;padding-bottom:72px;}
+body{background:var(--dark);color:#e8f5e9;font-family:var(--font);overflow-x:hidden;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08);padding:16px 6%;display:flex;align-items:center;justify-content:space-between;transition:.3s;}
-.logo{font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.02em;}.logo span{color:var(--accent);}
-nav ul{list-style:none;display:flex;gap:32px;}.nav-link{color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}.nav-link:hover{color:var(--accent);}
-.nav-cta{background:var(--accent);color:#000;padding:9px 22px;border-radius:50px;font-weight:700;font-size:13px;text-decoration:none;transition:opacity .2s;}.nav-cta:hover{opacity:.85;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(7,14,7,0.92);border-bottom:2px solid var(--lime);}
+.logo{font-family:var(--cond);font-size:24px;font-weight:800;color:#fff;letter-spacing:.05em;}
+.logo span{color:var(--yellow);}
+nav ul{list-style:none;display:flex;gap:32px;}
+nav a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:15px;font-weight:500;transition:color .2s;}
+nav a:hover{color:var(--yellow);}
+.nav-cta{background:var(--yellow);color:#000;padding:10px 24px;font-weight:700;font-size:14px;text-decoration:none;font-family:var(--cond);letter-spacing:.05em;transition:background .2s;}
+.nav-cta:hover{background:var(--lime);}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:0 6%;}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80') center/cover no-repeat;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 60%,rgba(0,0,0,.3) 100%);}
-.hero-content{position:relative;z-index:2;max-width:680px;animation:heroIn .8s ease both;}
-@keyframes heroIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
-.eyebrow::before{content:'';width:30px;height:2px;background:var(--accent);}
-h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.1;margin-bottom:24px;color:#fff;}
-h1 em{font-style:italic;color:var(--accent);}
-.hero-sub{font-size:17px;color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:36px;max-width:520px;}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
-.btn-primary{background:var(--accent);color:#000;padding:15px 32px;border-radius:50px;font-weight:800;font-size:15px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,.2);}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3);}
-.btn-outline{border:2px solid rgba(255,255,255,.4);color:#fff;padding:13px 28px;border-radius:50px;font-weight:600;font-size:15px;text-decoration:none;transition:border-color .2s,color .2s;}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0 6% 80px;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1400&q=80') center/cover;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(7,14,7,1) 0%, rgba(7,14,7,0.7) 50%, rgba(7,14,7,0.2) 100%);}
+.hero-content{position:relative;z-index:2;max-width:700px;}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(249,168,37,0.15);border:1px solid var(--yellow);color:var(--yellow);padding:6px 14px;font-family:var(--cond);font-size:13px;letter-spacing:.1em;margin-bottom:24px;}
+.sun-icon{width:16px;height:16px;background:var(--yellow);border-radius:50%;box-shadow:0 0 8px var(--yellow);}
+h1{font-family:var(--cond);font-size:clamp(3rem,7vw,5.5rem);font-weight:800;line-height:0.95;text-transform:uppercase;color:#fff;margin-bottom:24px;}
+h1 span{color:var(--yellow);}
+.hero-desc{font-size:17px;color:rgba(255,255,255,0.7);line-height:1.6;margin-bottom:36px;max-width:500px;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-y{background:var(--yellow);color:#000;padding:16px 36px;font-family:var(--cond);font-weight:700;font-size:16px;letter-spacing:.05em;text-decoration:none;transition:all .2s;}
+.btn-y:hover{background:var(--lime);}
+.btn-wh{border:2px solid rgba(255,255,255,0.4);color:#fff;padding:14px 32px;font-family:var(--cond);font-size:16px;letter-spacing:.05em;text-decoration:none;transition:all .2s;}
+.btn-wh:hover{border-color:var(--yellow);color:var(--yellow);}
 
-/* STATS */
-.stats{background:var(--accent);padding:60px 6%;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;}
-@media(max-width:768px){.stats{grid-template-columns:repeat(2,1fr);padding:40px 5%;}}
-.stat-item{padding:16px;}
-.stat-num{font-size:clamp(2rem,5vw,3rem);font-weight:800;color:#000;line-height:1;margin-bottom:8px;}
-.stat-lbl{font-size:12px;color:rgba(0,0,0,.7);font-weight:600;text-transform:uppercase;letter-spacing:.06em;}
+.numbers{background:var(--yellow);padding:48px 6%;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;}
+.num-item{padding:16px;border-right:2px solid rgba(0,0,0,0.15);}
+.num-item:last-child{border:none;}
+.big-num{font-family:var(--cond);font-size:3.5rem;font-weight:800;color:#000;line-height:1;}
+.num-lbl{font-size:13px;font-weight:600;color:rgba(0,0,0,0.65);margin-top:6px;text-transform:uppercase;letter-spacing:.05em;}
 
-/* SERVICES */
-.services{padding:90px 6%;background:color-mix(in srgb,var(--bg) 80%,#111);}
-.section-header{text-align:center;margin-bottom:60px;}
-.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
-.section-title{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;color:#fff;}
-.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;}
-.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:32px 24px;transition:border-color .25s,transform .25s;}
-.card:hover{border-color:var(--accent);transform:translateY(-4px);}
-.card-icon{font-size:28px;color:var(--accent);margin-bottom:16px;}
-.card h3{font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;}
-.card p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.65;}
+.why{padding:80px 6%;background:var(--mid);}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:48px;}
+.why-item{padding:40px;border:1px solid rgba(174,234,0,0.1);position:relative;}
+.why-item:hover{background:rgba(174,234,0,0.03);}
+.wi-num{font-family:var(--cond);font-size:48px;font-weight:800;color:rgba(174,234,0,0.15);position:absolute;top:20px;right:24px;}
+.wi-icon{font-size:28px;margin-bottom:16px;}
+.why-item h3{font-family:var(--cond);font-size:22px;font-weight:700;color:#fff;margin-bottom:10px;text-transform:uppercase;}
+.why-item p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;}
 
-/* REVIEWS */
-.reviews{padding:90px 6%;background:var(--bg);}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
-@media(max-width:900px){.reviews-grid{grid-template-columns:1fr;}}
-.review-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px 24px;}
-.review-stars{font-size:18px;color:#f59e0b;margin-bottom:14px;}
-.review-text{font-size:14.5px;line-height:1.7;color:rgba(255,255,255,.8);font-style:italic;margin-bottom:16px;}
-.review-author{font-size:13px;font-weight:700;color:var(--accent);}
+.sec-label{font-family:var(--cond);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);margin-bottom:12px;}
+.sec-h2{font-family:var(--cond);font-size:clamp(2rem,4vw,3rem);font-weight:800;text-transform:uppercase;color:#fff;}
 
-/* FAQ */
-.faq-section{padding:90px 6%;max-width:800px;margin:0 auto;}
-.faq-item{border-bottom:1px solid rgba(255,255,255,.1);overflow:hidden;}
-.faq-q{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:15.5px;font-weight:600;color:#fff;cursor:pointer;text-align:left;gap:12px;-webkit-tap-highlight-color:transparent;font-family:var(--font);}
-.faq-q svg{flex-shrink:0;transition:transform .25s;color:var(--accent);}
-.faq-q.open svg{transform:rotate(180deg);}
-.faq-a{font-size:14.5px;color:rgba(255,255,255,.6);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;}
-.faq-a.open{max-height:200px;padding-bottom:18px;}
+.reviews{padding:80px 6%;}
+.r-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.r-card{background:var(--card);border-top:3px solid var(--yellow);padding:28px;}
+.r-s{color:var(--yellow);font-size:18px;margin-bottom:12px;}
+.r-t{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;font-style:italic;margin-bottom:14px;}
+.r-n{font-family:var(--cond);font-size:14px;color:var(--lime);letter-spacing:.05em;}
 
-/* CTA */
-.cta{background:var(--accent);padding:90px 6%;text-align:center;}
-.cta-title{font-size:clamp(1.5rem,4.5vw,2.4rem);font-weight:800;color:#000;margin-bottom:16px;}
-.cta-desc{font-size:16px;color:rgba(0,0,0,.7);margin-bottom:32px;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.6;}
-.cta-btn{display:inline-block;background:#000;color:var(--accent);font-weight:800;font-size:15px;padding:16px 38px;border-radius:50px;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(0,0,0,.2);}
-.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3);}
+.faq{padding:80px 6%;background:var(--mid);}
+.faq-wrap{max-width:800px;margin:40px auto 0;}
+.fi{border-bottom:1px solid rgba(174,234,0,0.15);}
+.fq{width:100%;background:none;border:none;display:flex;justify-content:space-between;padding:18px 0;font-family:var(--cond);font-size:17px;font-weight:700;color:#fff;cursor:pointer;text-align:left;letter-spacing:.03em;gap:12px;}
+.fq .ico{color:var(--yellow);font-size:20px;transition:transform .2s;}
+.fq.open .ico{transform:rotate(45deg);}
+.fa{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;}
+.fa.open{max-height:160px;padding-bottom:16px;}
 
-/* FOOTER */
-footer{background:#000;padding:40px 6%;text-align:center;border-top:1px solid rgba(255,255,255,.07);}
-.footer-logo{font-size:20px;font-weight:800;color:#fff;margin-bottom:10px;}.footer-logo span{color:var(--accent);}
-footer p{font-size:13px;color:rgba(255,255,255,.35);}
+.cta-band{background:linear-gradient(90deg,var(--yellow) 0%,var(--lime) 100%);padding:60px 6%;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;}
+.cta-band h2{font-family:var(--cond);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;text-transform:uppercase;color:#000;}
+.cta-band a{background:#000;color:var(--yellow);padding:16px 40px;font-family:var(--cond);font-weight:800;font-size:16px;text-decoration:none;letter-spacing:.05em;white-space:nowrap;transition:all .2s;}
+.cta-band a:hover{background:var(--dark);}
 
-/* ANIMATIONS */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s;}
+.contact{padding:80px 6%;}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:960px;margin:40px auto 0;}
+.ci h3{font-family:var(--cond);font-size:22px;font-weight:700;color:var(--yellow);text-transform:uppercase;margin-bottom:20px;}
+.ci p{font-size:14px;color:rgba(255,255,255,0.55);line-height:2.2;font-weight:500;}
+.ci strong{color:#fff;}
+input,textarea{width:100%;background:var(--card);border:1px solid rgba(174,234,0,0.15);color:#fff;padding:14px 16px;font-family:var(--font);font-size:14px;margin-bottom:12px;outline:none;transition:border-color .2s;}
+input:focus,textarea:focus{border-color:var(--yellow);}
+textarea{height:100px;resize:vertical;}
+button[type=submit]{width:100%;background:var(--yellow);color:#000;border:none;padding:15px;font-family:var(--cond);font-weight:800;font-size:16px;cursor:pointer;letter-spacing:.05em;transition:all .2s;}
+button[type=submit]:hover{background:var(--lime);}
+
+footer{background:#000;padding:28px 6%;display:flex;justify-content:space-between;align-items:center;}
+.fl{font-family:var(--cond);font-size:18px;font-weight:800;color:var(--yellow);}
+footer p{font-size:12px;color:rgba(255,255,255,0.3);font-weight:500;}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
 .reveal.visible{opacity:1;transform:none;}
 
-/* CONTACT */
-#iletisim{padding:90px 6%;background:color-mix(in srgb,var(--bg) 90%,#111);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:900px;margin:0 auto;}
-@media(max-width:768px){.contact-grid{grid-template-columns:1fr;}}
-.contact-info h3{font-size:20px;font-weight:700;color:#fff;margin-bottom:20px;}
-.contact-info p{color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:12px;font-size:15px;}
-.contact-info strong{color:var(--accent);}
-.contact-form input,.contact-form textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 16px;color:#fff;font-size:15px;font-family:var(--font);margin-bottom:14px;outline:none;transition:border-color .2s;}
-.contact-form input:focus,.contact-form textarea:focus{border-color:var(--accent);}
-.contact-form textarea{height:120px;resize:vertical;}
-.contact-form button{width:100%;background:var(--accent);color:#000;border:none;padding:15px;border-radius:10px;font-weight:800;font-size:15px;cursor:pointer;font-family:var(--font);transition:opacity .2s;}.contact-form button:hover{opacity:.85;}
-</style>
-
-<style>
 @media(max-width:768px){
-  .menu-btn,.hamburger,.nav-toggle,nav button{display:none!important;visibility:hidden!important;}
-  nav ul,nav>ul{display:none!important;}
-  nav,#nav{padding:10px 5%!important;min-height:unset!important;height:auto!important;}
-  body{padding-bottom:72px!important;}
-  h1{font-size:clamp(1.7rem,7.5vw,3rem)!important;line-height:1.15!important;}
-  h2{font-size:clamp(1.3rem,6vw,2rem)!important;}
-  section{padding:56px 5%!important;}
-  [class*="grid"]{grid-template-columns:1fr!important;}
-  input,textarea,select{font-size:16px!important;}
-  img{max-width:100%;height:auto;}
+  .numbers,.why-grid,.r-strip,.cg{grid-template-columns:1fr!important;}
+  h1{font-size:3rem!important;}
+  body{padding-bottom:60px;}
+  nav ul,.nav-cta{display:none;}
 }
-@media(min-width:769px){.mobile-bottom-nav{display:none!important;}}
-nav.mobile-bottom-nav,.mobile-bottom-nav{
-  top:auto!important;bottom:0!important;left:0!important;right:0!important;
-  position:fixed!important;height:64px!important;z-index:99999!important;
-  padding:0 2px!important;border-bottom:none!important;
-  border-top:1px solid rgba(255,255,255,0.1)!important;
-  background:rgba(8,8,8,0.97)!important;backdrop-filter:blur(20px)!important;
-  -webkit-backdrop-filter:blur(20px)!important;
-  box-shadow:0 -6px 28px rgba(0,0,0,0.45)!important;
-}
-@media(max-width:768px){.mobile-bottom-nav{display:flex!important;align-items:stretch!important;justify-content:space-around!important;}}
-.mob-nav-item{flex:1!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;text-decoration:none!important;color:rgba(255,255,255,0.42)!important;font-size:9px!important;font-weight:700!important;letter-spacing:0.05em!important;text-transform:uppercase!important;transition:color .18s!important;padding:6px 2px!important;position:relative!important;-webkit-tap-highlight-color:transparent!important;}
-.mob-nav-item.active{color:#fff!important;}
-.mob-nav-item svg{width:22px!important;height:22px!important;stroke:currentColor!important;fill:none!important;stroke-width:1.7!important;stroke-linecap:round!important;stroke-linejoin:round!important;}
-.mob-nav-item.active::after{content:'';position:absolute;bottom:5px;width:18px;height:2.5px;border-radius:2px;background:currentColor;}
+.mnav{display:none;position:fixed;bottom:0;left:0;right:0;height:60px;background:rgba(7,14,7,0.97);border-top:2px solid var(--yellow);z-index:9999;align-items:stretch;justify-content:space-around;}
+@media(max-width:768px){.mnav{display:flex!important;}}
+.mi{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-decoration:none;color:rgba(255,255,255,0.4);font-family:var(--cond);font-size:9px;letter-spacing:.05em;font-weight:700;text-transform:uppercase;-webkit-tap-highlight-color:transparent;transition:color .2s;}
+.mi.active{color:var(--yellow);}
+.mi svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
 </style>
 </head>
 <body>
-
-<nav id="nav">
-  <div class="logo">SunPower<span>.</span></div>
+<nav>
+  <div class="logo">Sun<span>Power</span></div>
   <ul>
-    <li><a href="#hizmetler" class="nav-link">Hizmetler</a></li>
-    <li><a href="#yorumlar" class="nav-link">Yorumlar</a></li>
-    <li><a href="#sss" class="nav-link">SSS</a></li>
-    <li><a href="#iletisim" class="nav-link">İletişim</a></li>
+    <li><a href="#why">Neden Solar?</a></li>
+    <li><a href="#reviews">Referans</a></li>
+    <li><a href="#contact">İletişim</a></li>
   </ul>
-  <a href="#iletisim" class="nav-cta">İletişim</a>
+  <a href="#contact" class="nav-cta">Ücretsiz Keşif</a>
 </nav>
 
-<header class="hero">
+<section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="eyebrow">Enerji & Güneş</div>
-    <h1>SunPower Enerji ile <em>fark yaratın.</em></h1>
-    <p class="hero-sub">Güneş enerjisi sistemleri ile elektrik faturanızı sıfırlayın.</p>
+    <div class="badge"><div class="sun-icon"></div>YENİLENEBİLİR ENERJİ</div>
+    <h1>Güneş<br>Enerjisi<br><span>Kurun,</span><br>Kazanın.</h1>
+    <p class="hero-desc">Çatınıza kurduğumuz güneş panelleri ile elektrik faturanızı %85 düşürün. Ortalama 5 yılda amortisman.</p>
     <div class="hero-btns">
-      <a href="#iletisim" class="btn-primary">Ücretsiz Keşif</a>
-      <a href="#hizmetler" class="btn-outline">Hizmetlerimiz</a>
+      <a href="#contact" class="btn-y">Ücretsiz Keşif Talep Et</a>
+      <a href="#why" class="btn-wh">Nasıl Çalışır?</a>
     </div>
   </div>
-</header>
-
-<section class="stats">
-
-        <div class="stat-item reveal">
-          <div class="stat-num">1.000+</div>
-          <div class="stat-lbl">Kurulum</div>
-        </div>
-        <div class="stat-item reveal">
-          <div class="stat-num">10</div>
-          <div class="stat-lbl">Yıllık Deneyim</div>
-        </div>
-        <div class="stat-item reveal">
-          <div class="stat-num">%80</div>
-          <div class="stat-lbl">Fatura Tasarrufu</div>
-        </div>
-        <div class="stat-item reveal">
-          <div class="stat-num">4.9</div>
-          <div class="stat-lbl">Müşteri Puanı</div>
-        </div>
 </section>
 
-<section class="services" id="hizmetler">
-  <div class="section-header">
-    <div class="section-eyebrow">Hizmetlerimiz</div>
-    <h2 class="section-title">Size Neler Sunuyoruz?</h2>
-  </div>
-  <div class="grid-4">
+<div class="numbers">
+  <div class="num-item"><div class="big-num" data-target="1000">0</div><div class="num-lbl">Tamamlanan Kurulum</div></div>
+  <div class="num-item"><div class="big-num" data-target="85">0</div><div class="num-lbl">% Fatura Tasarrufu</div></div>
+  <div class="num-item"><div class="big-num" data-target="10">0</div><div class="num-lbl">Yıllık Deneyim</div></div>
+  <div class="num-item"><div class="big-num" data-target="5">0</div><div class="num-lbl">Yılda Amortisman</div></div>
+</div>
 
-        <div class="card reveal">
-          <div class="card-icon">◆</div>
-          <h3>Çatı GES</h3>
-          <p>Konut ve işyeri çatı güneş enerji sistemleri.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">◆</div>
-          <h3>Arazi GES</h3>
-          <p>Tarla tipi büyük ölçekli güneş santralleri.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">◆</div>
-          <h3>Depolama</h3>
-          <p>Lityum batarya enerji depolama sistemleri.</p>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">◆</div>
-          <h3>Bakım Onarım</h3>
-          <p>Periyodik panel temizliği ve sistem bakımı.</p>
-        </div>
+<section class="why" id="why">
+  <div class="sec-label">Neden Solar?</div>
+  <h2 class="sec-h2">Güneş Enerjisinin Avantajları</h2>
+  <div class="why-grid">
+    <div class="why-item reveal"><div class="wi-num">01</div><div class="wi-icon">☀</div><h3>Sıfır Yakıt Maliyeti</h3><p>Güneş ışınları tamamen ücretsizdir. Panel kurulduktan sonra enerji maliyetiniz neredeyse sıfırlanır.</p></div>
+    <div class="why-item reveal"><div class="wi-num">02</div><div class="wi-icon">♻</div><h3>Çevre Dostu</h3><p>CO2 salımı sıfır. Karbon ayak izinizi azaltın ve sürdürülebilir bir gelecek için katkı sağlayın.</p></div>
+    <div class="why-item reveal"><div class="wi-num">03</div><div class="wi-icon">⚡</div><h3>Devlet Teşviki</h3><p>YEKA ve lisanssız üretim teşvikleri. Fazla enerjiyi TEDAŞ'a satın, ek gelir kazanın.</p></div>
+    <div class="why-item reveal"><div class="wi-num">04</div><div class="wi-icon">🔋</div><h3>Enerji Depolama</h3><p>Lityum batarya ile gece de güneş enerjisi kullanın. Şebeke kesintisinden etkilenmeyin.</p></div>
   </div>
 </section>
 
-<section class="reviews" id="yorumlar">
-  <div class="section-header">
-    <div class="section-eyebrow">Müşteri Yorumları</div>
-    <h2 class="section-title">Müşterilerimiz Ne Diyor?</h2>
-  </div>
-  <div class="reviews-grid">
-
-        <div class="review-card reveal">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Elektrik faturam %85 düştü. 5 yılda kendini amorti etti."</p>
-          <div class="review-author">— Tarık B.</div>
-        </div>
-        <div class="review-card reveal">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Ekip çok profesyonel. Kurulum 2 günde tamamlandı."</p>
-          <div class="review-author">— Gülsüm A.</div>
-        </div>
-        <div class="review-card reveal">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"TEDAŞ bağlantısı ve teşvik belgesi işlemlerini de hallettiler."</p>
-          <div class="review-author">— Serkan K.</div>
-        </div>
+<section class="reviews" id="reviews">
+  <div class="sec-label">Müşterilerimiz</div>
+  <h2 class="sec-h2">Onlar Denedi, Anlattı</h2>
+  <div class="r-strip">
+    <div class="r-card reveal"><div class="r-s">★★★★★</div><p class="r-t">"Elektrik faturam 5.200 TL'den 780 TL'ye düştü. İnanılmaz tasarruf. Kesinlikle öneririm."</p><div class="r-n">Tarık B. — Fabrika Sahibi</div></div>
+    <div class="r-card reveal"><div class="r-s">★★★★★</div><p class="r-t">"Kurulum 2 günde tamamlandı. Ekip çok profesyonel, teşvik belgelerini de hallettiler."</p><div class="r-n">Gülsüm A. — Ev Sahibi</div></div>
+    <div class="r-card reveal"><div class="r-s">★★★★★</div><p class="r-t">"4.5 yılda sistem kendini amorti etti. Şimdi TEDAŞ'a enerji satıyorum. Harika yatırım."</p><div class="r-n">Serkan K. — Çiftçi</div></div>
   </div>
 </section>
 
-<section class="faq-section" id="sss">
-  <div class="section-header">
-    <div class="section-eyebrow">Sık Sorulan Sorular</div>
-    <h2 class="section-title">Merak Ettikleriniz</h2>
+<section class="faq" id="faq">
+  <div class="sec-label">Merak Edilenler</div>
+  <h2 class="sec-h2">Sık Sorulan Sorular</h2>
+  <div class="faq-wrap">
+    <div class="fi"><button class="fq" onclick="faq(this)"><span>Kurulum ne kadar sürer?</span><span class="ico">+</span></button><div class="fa">Konut sistemleri 1–2 gün, sanayi tesisleri 3–7 gün içinde tamamlanır.</div></div>
+    <div class="fi"><button class="fq" onclick="faq(this)"><span>Bulutlu havada ne olur?</span><span class="ico">+</span></button><div class="fa">Paneller difüz ışıkta da çalışır. Yağmurlu günlerde %20–30 verim elde edilir.</div></div>
+    <div class="fi"><button class="fq" onclick="faq(this)"><span>Garanti süresi ne kadar?</span><span class="ico">+</span></button><div class="fa">Panel üretim garantisi 25 yıl, inverter garantisi 10 yıl, işçilik garantisi 5 yıldır.</div></div>
   </div>
-
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Devlet teşviki alabilir miyim?</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-a">Evet, YEKA ve OSB teşvikleri için başvuru sürecinde yardımcı oluyoruz.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Kaç yılda amortisman sağlanır?</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-a">Konut sistemlerinde ortalama 5–7 yıl, sanayi sistemlerinde 4–6 yıl.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Çatı tipi uygun mu?</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-a">Ön keşif ile çatı analizi yapıp en uygun sistemi tasarlıyoruz.</div>
-        </div>
 </section>
 
-<section class="cta">
-  <h2 class="cta-title">Güneş Enerjisine Geçin</h2>
-  <p class="cta-desc">Güneş enerjisi sistemleri ile elektrik faturanızı sıfırlayın.</p>
-  <a href="#iletisim" class="cta-btn">Ücretsiz Keşif</a>
-</section>
+<div class="cta-band">
+  <h2>Faturanızı sıfırlayalım.</h2>
+  <a href="#contact">Ücretsiz Enerji Analizi →</a>
+</div>
 
-<section id="iletisim">
-  <div class="section-header">
-    <div class="section-eyebrow">İletişim</div>
-    <h2 class="section-title">Bizimle İletişime Geçin</h2>
-  </div>
-  <div class="contact-grid">
-    <div class="contact-info reveal">
+<section class="contact" id="contact">
+  <div class="sec-label" style="text-align:center">İletişim</div>
+  <h2 class="sec-h2" style="text-align:center">Keşif Randevusu Alın</h2>
+  <div class="cg">
+    <div class="ci reveal">
       <h3>Bilgilerimiz</h3>
-      <p><strong>Firma:</strong> SunPower Enerji</p>
-      <p><strong>Sektör:</strong> Enerji & Güneş</p>
-      <p><strong>Telefon:</strong> 0850 XXX XX XX</p>
-      <p><strong>E-posta:</strong> info@solar-enerji.com</p>
-      <p><strong>Adres:</strong> İstanbul, Türkiye</p>
+      <p><strong>Firma:</strong> SunPower Enerji A.Ş.<br>
+      <strong>Tel:</strong> 0850 XXX XX XX<br>
+      <strong>E-posta:</strong> info@sunpower.com.tr<br>
+      <strong>Adres:</strong> İstanbul, Türkiye</p>
     </div>
-    <div class="contact-form reveal">
+    <div class="reveal">
       <input type="text" placeholder="Adınız Soyadınız">
-      <input type="tel" placeholder="Telefon Numaranız">
-      <input type="email" placeholder="E-posta Adresiniz">
-      <textarea placeholder="Mesajınız..."></textarea>
-      <button type="submit">Gönder →</button>
+      <input type="tel" placeholder="Telefon">
+      <input type="text" placeholder="Çatı tipi / m²">
+      <textarea placeholder="Mevcut aylık fatura tutarınız..."></textarea>
+      <button type="submit">Keşif Talep Et ☀</button>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-logo">SunPower<span>.</span></div>
+  <div class="fl">SunPower ☀</div>
   <p>© 2026 SunPower Enerji. Tüm hakları saklıdır.</p>
 </footer>
 
-<nav class="mobile-bottom-nav" id="mbn">
-  <a href="#hizmetler" class="mob-nav-item active"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Hizmetler</span></a>
-  <a href="#yorumlar" class="mob-nav-item"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Yorumlar</span></a>
-  <a href="#sss" class="mob-nav-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4m0 4h.01"/></svg><span>SSS</span></a>
-  <a href="#iletisim" class="mob-nav-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.05 2.18 2 2 0 012.04 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span>İletişim</span></a>
+<nav class="mnav">
+  <a href="#why" class="mi active"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>Avantaj</a>
+  <a href="#reviews" class="mi"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Referans</a>
+  <a href="#faq" class="mi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>SSS</a>
+  <a href="#contact" class="mi"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.8 19.8 0 013.07 10.8"/></svg>İletişim</a>
 </nav>
 
 <script>
-// Scroll reveal
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
-}, {threshold:0.12});
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-// Nav scroll
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => { nav.style.background = scrollY > 60 ? 'rgba(0,0,0,0.98)' : 'rgba(0,0,0,0.92)'; }, {passive:true});
-
-// Mobile nav active
-(function(){
-  const items = document.querySelectorAll('.mob-nav-item');
-  const secs = [];
-  items.forEach(item => {
-    const h = item.getAttribute('href');
-    if(h && h.startsWith('#') && h.length > 1) {
-      const el = document.querySelector(h);
-      if(el) secs.push({item, el});
-    }
-    item.addEventListener('click', () => {
-      items.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-    });
-  });
-  if(secs.length) window.addEventListener('scroll', () => {
-    const sy = window.pageYOffset + 120;
-    let cur = secs[0];
-    secs.forEach(s => { if(s.el.offsetTop <= sy) cur = s; });
-    items.forEach(i => i.classList.remove('active'));
-    cur.item.classList.add('active');
-  }, {passive:true});
-})();
-
-// FAQ
-function toggleFaq(btn) {
-  const a = btn.parentElement.querySelector('.faq-a');
-  const open = btn.classList.contains('open');
-  document.querySelectorAll('.faq-q.open').forEach(b => {
-    b.classList.remove('open');
-    b.parentElement.querySelector('.faq-a').classList.remove('open');
-  });
-  if(!open) { btn.classList.add('open'); a.classList.add('open'); }
-}
-
-// Stats count-up
-(function(){
-  const stats = document.querySelectorAll('.stat-num');
-  let done = false;
-  const obs = new IntersectionObserver(entries => {
-    if(done) return;
-    entries.forEach(e => {
-      if(e.isIntersecting) {
-        done = true;
-        stats.forEach(el => {
-          const t = el.textContent;
-          const n = parseFloat(t.replace(/[^0-9.]/g,''));
-          const suf = t.replace(/[0-9.]/g,'');
-          if(isNaN(n)) return;
-          let start = null;
-          const step = ts => {
-            if(!start) start = ts;
-            const p = Math.min((ts-start)/1400,1);
-            const e2 = 1-Math.pow(1-p,3);
-            el.textContent = Math.round(e2*n*10)/10 + suf;
-            if(p<1) requestAnimationFrame(step);
-          };
-          requestAnimationFrame(step);
-        });
-        obs.disconnect();
-      }
-    });
-  }, {threshold:0.3});
-  const s = document.querySelector('.stats');
-  if(s) obs.observe(s);
-})();
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const obs2=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){
+  document.querySelectorAll('[data-target]').forEach(el=>{const t=+el.dataset.target;let s=null;
+    const step=ts=>{if(!s)s=ts;const p=Math.min((ts-s)/1400,1),v=Math.round((1-Math.pow(1-p,3))*t);
+      el.textContent=v;if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);});
+  obs2.disconnect();}})},{threshold:.4});
+const nb=document.querySelector('.numbers');if(nb)obs2.observe(nb);
+document.querySelectorAll('.mi').forEach(m=>{m.addEventListener('click',()=>{document.querySelectorAll('.mi').forEach(x=>x.classList.remove('active'));m.classList.add('active');});});
+function faq(b){const a=b.nextElementSibling,o=b.classList.contains('open');
+  document.querySelectorAll('.fq.open').forEach(x=>{x.classList.remove('open');x.nextElementSibling.classList.remove('open');});
+  if(!o){b.classList.add('open');a.classList.add('open');}}
 </script>
 </body>
 </html>
