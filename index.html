@@ -3,222 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SunPower Enerji — Solar Güneş Sistemi</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<title>SolarTech Enerji — Güneşten Güç Alın</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--dark:#070e07;--mid:#0d1f0d;--card:#122012;--yellow:#f9a825;--lime:#aeea00;--font:'Barlow',sans-serif;--cond:'Barlow Condensed',sans-serif;}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--dark);color:#e8f5e9;font-family:var(--font);overflow-x:hidden;}
+:root{--a:#f59e0b;--a2:#ef4444;--bg:#1c1007;--dark:#1c1007;--card:#2d1a0d;--text:#f0f0f0;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(28,16,7,0.97);padding:0 6%;height:66px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #f59e0b;backdrop-filter:blur(8px);}
+.logo{font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;color:#fff;letter-spacing:-.02em;}
+.logo span{color:#f59e0b;}
+nav ul{list-style:none;display:flex;gap:28px;}
+nav a{color:rgba(255,255,255,0.55);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;}
+nav a:hover{color:#f59e0b;}
+.nav-cta{background:#f59e0b;color:#fff;padding:8px 20px;font-size:13px;font-weight:700;text-decoration:none;border-radius:6px;transition:opacity .2s;}
+.nav-cta:hover{opacity:.85;}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 6%;display:flex;align-items:center;justify-content:space-between;background:rgba(7,14,7,0.92);border-bottom:2px solid var(--lime);}
-.logo{font-family:var(--cond);font-size:24px;font-weight:800;color:#fff;letter-spacing:.05em;}
-.logo span{color:var(--yellow);}
-nav ul{list-style:none;display:flex;gap:32px;}
-nav a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:15px;font-weight:500;transition:color .2s;}
-nav a:hover{color:var(--yellow);}
-.nav-cta{background:var(--yellow);color:#000;padding:10px 24px;font-weight:700;font-size:14px;text-decoration:none;font-family:var(--cond);letter-spacing:.05em;transition:background .2s;}
-.nav-cta:hover{background:var(--lime);}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;}
+.hbg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1400&q=80') center/cover;}
+.hov{position:absolute;inset:0;background:linear-gradient(135deg,#1c1007f5 0%,#1c1007cc 50%,#1c100744 100%);}
+.hc{position:relative;z-index:2;padding:0 6%;max-width:650px;padding-top:80px;}
+.htag{display:inline-block;background:#f59e0b22;border:1px solid #f59e0b55;color:#f59e0b;padding:6px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:22px;}
+h1{font-family:'Outfit',sans-serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:700;line-height:1;color:#fff;margin-bottom:18px;letter-spacing:-.02em;}
+h1 em{font-style:italic;color:#f59e0b;}
+.hp{font-size:16px;color:rgba(255,255,255,.6);line-height:1.75;max-width:480px;margin-bottom:30px;font-weight:300;}
+.btns{display:flex;gap:12px;flex-wrap:wrap;}
+.b1{background:#f59e0b;color:#fff;padding:13px 30px;font-size:14px;font-weight:700;text-decoration:none;border-radius:8px;transition:opacity .2s;}
+.b1:hover{opacity:.85;}
+.b2{border:1px solid #f59e0b66;color:#f59e0b;padding:12px 26px;font-size:14px;font-weight:500;text-decoration:none;border-radius:8px;transition:all .2s;}
+.b2:hover{background:#f59e0b11;border-color:#f59e0b;}
 
-.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0 6% 80px;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1400&q=80') center/cover;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(7,14,7,1) 0%, rgba(7,14,7,0.7) 50%, rgba(7,14,7,0.2) 100%);}
-.hero-content{position:relative;z-index:2;max-width:700px;}
-.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(249,168,37,0.15);border:1px solid var(--yellow);color:var(--yellow);padding:6px 14px;font-family:var(--cond);font-size:13px;letter-spacing:.1em;margin-bottom:24px;}
-.sun-icon{width:16px;height:16px;background:var(--yellow);border-radius:50%;box-shadow:0 0 8px var(--yellow);}
-h1{font-family:var(--cond);font-size:clamp(3rem,7vw,5.5rem);font-weight:800;line-height:0.95;text-transform:uppercase;color:#fff;margin-bottom:24px;}
-h1 span{color:var(--yellow);}
-.hero-desc{font-size:17px;color:rgba(255,255,255,0.7);line-height:1.6;margin-bottom:36px;max-width:500px;}
-.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
-.btn-y{background:var(--yellow);color:#000;padding:16px 36px;font-family:var(--cond);font-weight:700;font-size:16px;letter-spacing:.05em;text-decoration:none;transition:all .2s;}
-.btn-y:hover{background:var(--lime);}
-.btn-wh{border:2px solid rgba(255,255,255,0.4);color:#fff;padding:14px 32px;font-family:var(--cond);font-size:16px;letter-spacing:.05em;text-decoration:none;transition:all .2s;}
-.btn-wh:hover{border-color:var(--yellow);color:var(--yellow);}
+.svcs{padding:80px 6%;background:#1c1007;}
+.stag{font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#f59e0b;display:block;margin-bottom:10px;}
+.sh2{font-family:'Outfit',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:#fff;margin-bottom:48px;letter-spacing:-.02em;}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.sc{background:#2d1a0d;border-radius:12px;padding:28px;border:1px solid #f59e0b22;transition:all .3s;}
+.sc:hover{border-color:#f59e0b;transform:translateY(-4px);box-shadow:0 12px 32px #f59e0b22;}
+.si-ico{font-size:2.5rem;margin-bottom:14px;}
+.sn{font-family:'Outfit',sans-serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:8px;}
+.sd{font-size:13px;color:rgba(240,240,240,.5);line-height:1.65;}
 
-.numbers{background:var(--yellow);padding:48px 6%;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;}
-.num-item{padding:16px;border-right:2px solid rgba(0,0,0,0.15);}
-.num-item:last-child{border:none;}
-.big-num{font-family:var(--cond);font-size:3.5rem;font-weight:800;color:#000;line-height:1;}
-.num-lbl{font-size:13px;font-weight:600;color:rgba(0,0,0,0.65);margin-top:6px;text-transform:uppercase;letter-spacing:.05em;}
+.stats{background:#f59e0b;padding:56px 6%;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;}
+.sti{padding:20px;border-right:2px solid rgba(255,255,255,.15);}
+.sti:last-child{border:none;}
+.stN{font-family:'Outfit',sans-serif;font-size:3.2rem;font-weight:700;color:#fff;line-height:1;}
+.stL{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:6px;}
 
-.why{padding:80px 6%;background:var(--mid);}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:48px;}
-.why-item{padding:40px;border:1px solid rgba(174,234,0,0.1);position:relative;}
-.why-item:hover{background:rgba(174,234,0,0.03);}
-.wi-num{font-family:var(--cond);font-size:48px;font-weight:800;color:rgba(174,234,0,0.15);position:absolute;top:20px;right:24px;}
-.wi-icon{font-size:28px;margin-bottom:16px;}
-.why-item h3{font-family:var(--cond);font-size:22px;font-weight:700;color:#fff;margin-bottom:10px;text-transform:uppercase;}
-.why-item p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;}
+.reviews{padding:80px 6%;background:#2d1a0d;}
+.rg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+.rc{background:#1c1007;border-radius:12px;padding:24px;border:1px solid #f59e0b18;}
+.rs{color:#ef4444;font-size:15px;margin-bottom:10px;}
+.rt{font-size:14px;color:rgba(240,240,240,.6);line-height:1.7;margin-bottom:12px;}
+.rn{font-size:11px;font-weight:700;color:#f59e0b;letter-spacing:.1em;text-transform:uppercase;}
 
-.sec-label{font-family:var(--cond);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);margin-bottom:12px;}
-.sec-h2{font-family:var(--cond);font-size:clamp(2rem,4vw,3rem);font-weight:800;text-transform:uppercase;color:#fff;}
-
-.reviews{padding:80px 6%;}
-.r-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
-.r-card{background:var(--card);border-top:3px solid var(--yellow);padding:28px;}
-.r-s{color:var(--yellow);font-size:18px;margin-bottom:12px;}
-.r-t{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;font-style:italic;margin-bottom:14px;}
-.r-n{font-family:var(--cond);font-size:14px;color:var(--lime);letter-spacing:.05em;}
-
-.faq{padding:80px 6%;background:var(--mid);}
-.faq-wrap{max-width:800px;margin:40px auto 0;}
-.fi{border-bottom:1px solid rgba(174,234,0,0.15);}
-.fq{width:100%;background:none;border:none;display:flex;justify-content:space-between;padding:18px 0;font-family:var(--cond);font-size:17px;font-weight:700;color:#fff;cursor:pointer;text-align:left;letter-spacing:.03em;gap:12px;}
-.fq .ico{color:var(--yellow);font-size:20px;transition:transform .2s;}
-.fq.open .ico{transform:rotate(45deg);}
-.fa{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;}
+.faq{padding:80px 6%;background:#1c1007;}
+.fw{max-width:760px;margin:40px auto 0;}
+.fi{border-bottom:1px solid #f59e0b22;}
+.fq{width:100%;background:none;border:none;display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-family:'Outfit',sans-serif;font-size:17px;font-weight:700;color:#fff;cursor:pointer;text-align:left;gap:12px;}
+.fq .ic{background:#f59e0b22;color:#f59e0b;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;transition:all .2s;flex-shrink:0;font-family:sans-serif;font-weight:400;}
+.fq.open .ic{background:#f59e0b;color:#fff;transform:rotate(45deg);}
+.fa{font-size:14px;color:rgba(240,240,240,.5);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;font-family:'Outfit',sans-serif;}
 .fa.open{max-height:160px;padding-bottom:16px;}
 
-.cta-band{background:linear-gradient(90deg,var(--yellow) 0%,var(--lime) 100%);padding:60px 6%;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;}
-.cta-band h2{font-family:var(--cond);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;text-transform:uppercase;color:#000;}
-.cta-band a{background:#000;color:var(--yellow);padding:16px 40px;font-family:var(--cond);font-weight:800;font-size:16px;text-decoration:none;letter-spacing:.05em;white-space:nowrap;transition:all .2s;}
-.cta-band a:hover{background:var(--dark);}
+.cta{background:linear-gradient(135deg,#f59e0b,#ef4444);padding:72px 6%;text-align:center;}
+.cta h2{font-family:'Outfit',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:#fff;margin-bottom:10px;}
+.cta p{color:rgba(255,255,255,.75);font-size:15px;margin-bottom:26px;}
+.bc{background:#fff;color:#f59e0b;padding:14px 44px;font-size:14px;font-weight:700;text-decoration:none;border-radius:8px;transition:opacity .2s;display:inline-block;}
+.bc:hover{opacity:.9;}
 
-.contact{padding:80px 6%;}
-.cg{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:960px;margin:40px auto 0;}
-.ci h3{font-family:var(--cond);font-size:22px;font-weight:700;color:var(--yellow);text-transform:uppercase;margin-bottom:20px;}
-.ci p{font-size:14px;color:rgba(255,255,255,0.55);line-height:2.2;font-weight:500;}
+.contact{padding:80px 6%;background:#1c1007;}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:960px;margin:48px auto 0;}
+.ci h3{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:#f59e0b;margin-bottom:18px;}
+.ci p{font-size:14px;color:rgba(240,240,240,.5);line-height:2.3;}
 .ci strong{color:#fff;}
-input,textarea{width:100%;background:var(--card);border:1px solid rgba(174,234,0,0.15);color:#fff;padding:14px 16px;font-family:var(--font);font-size:14px;margin-bottom:12px;outline:none;transition:border-color .2s;}
-input:focus,textarea:focus{border-color:var(--yellow);}
-textarea{height:100px;resize:vertical;}
-button[type=submit]{width:100%;background:var(--yellow);color:#000;border:none;padding:15px;font-family:var(--cond);font-weight:800;font-size:16px;cursor:pointer;letter-spacing:.05em;transition:all .2s;}
-button[type=submit]:hover{background:var(--lime);}
+input,textarea{width:100%;background:#1c1007;border:1px solid #f59e0b33;border-radius:8px;color:#fff;padding:13px;font-family:'Outfit',sans-serif;font-size:14px;margin-bottom:10px;outline:none;transition:border-color .2s;}
+input:focus,textarea:focus{border-color:#f59e0b;}
+textarea{height:88px;resize:vertical;}
+button[type=submit]{width:100%;background:#f59e0b;color:#fff;border:none;border-radius:8px;padding:14px;font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;cursor:pointer;transition:opacity .2s;}
+button[type=submit]:hover{opacity:.85;}
 
-footer{background:#000;padding:28px 6%;display:flex;justify-content:space-between;align-items:center;}
-.fl{font-family:var(--cond);font-size:18px;font-weight:800;color:var(--yellow);}
-footer p{font-size:12px;color:rgba(255,255,255,0.3);font-weight:500;}
+footer{background:#1c1007;padding:24px 6%;display:flex;justify-content:space-between;align-items:center;border-top:2px solid #f59e0b44;}
+.fl{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:#fff;}
+.fl span{color:#f59e0b;}
+footer p{font-size:12px;color:rgba(255,255,255,.3);}
 
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s;}
 .reveal.visible{opacity:1;transform:none;}
-
-@media(max-width:768px){
-  .numbers,.why-grid,.r-strip,.cg{grid-template-columns:1fr!important;}
-  h1{font-size:3rem!important;}
-  body{padding-bottom:60px;}
-  nav ul,.nav-cta{display:none;}
-}
-.mnav{display:none;position:fixed;bottom:0;left:0;right:0;height:60px;background:rgba(7,14,7,0.97);border-top:2px solid var(--yellow);z-index:9999;align-items:stretch;justify-content:space-around;}
+@media(max-width:768px){.sg,.rg,.cg{grid-template-columns:1fr!important;}.stats{grid-template-columns:1fr 1fr!important;}body{padding-bottom:60px;}nav ul,.nav-cta{display:none;}}
+.mnav{display:none;position:fixed;bottom:0;left:0;right:0;height:60px;background:#1c1007;border-top:2px solid #f59e0b;z-index:9999;align-items:stretch;justify-content:space-around;}
 @media(max-width:768px){.mnav{display:flex!important;}}
-.mi{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-decoration:none;color:rgba(255,255,255,0.4);font-family:var(--cond);font-size:9px;letter-spacing:.05em;font-weight:700;text-transform:uppercase;-webkit-tap-highlight-color:transparent;transition:color .2s;}
-.mi.active{color:var(--yellow);}
+.mi{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-decoration:none;color:rgba(255,255,255,.3);font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;-webkit-tap-highlight-color:transparent;transition:color .2s;}
+.mi.active,.mi:hover{color:#f59e0b;}
 .mi svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;}
-</style>
-</head>
-<body>
+</style></head><body>
 <nav>
-  <div class="logo">Sun<span>Power</span></div>
-  <ul>
-    <li><a href="#why">Neden Solar?</a></li>
-    <li><a href="#reviews">Referans</a></li>
-    <li><a href="#contact">İletişim</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Ücretsiz Keşif</a>
+  <div class="logo">SolarTech<span>Enerji</span></div>
+  <ul><li><a href="#svcs">Hizmetler</a></li><li><a href="#reviews">Yorumlar</a></li><li><a href="#faq">SSS</a></li><li><a href="#contact">İletişim</a></li></ul>
+  <a href="#contact" class="nav-cta">İletişim</a>
 </nav>
-
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="badge"><div class="sun-icon"></div>YENİLENEBİLİR ENERJİ</div>
-    <h1>Güneş<br>Enerjisi<br><span>Kurun,</span><br>Kazanın.</h1>
-    <p class="hero-desc">Çatınıza kurduğumuz güneş panelleri ile elektrik faturanızı %85 düşürün. Ortalama 5 yılda amortisman.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-y">Ücretsiz Keşif Talep Et</a>
-      <a href="#why" class="btn-wh">Nasıl Çalışır?</a>
-    </div>
+<section class="hero"><div class="hbg"></div><div class="hov"></div>
+  <div class="hc">
+    <div class="htag">☀️ Güneş Enerjisi Sistemleri</div>
+    <h1>Güneşten Güç Alın</h1>
+    <p class="hp">Konut ve ticari güneş enerjisi sistemleri. Elektrik faturanızı sıfıra indirin.</p>
+    <div class="btns"><a href="#svcs" class="b1">Keşfet →</a><a href="#contact" class="b2">İletişim</a></div>
   </div>
 </section>
-
-<div class="numbers">
-  <div class="num-item"><div class="big-num" data-target="1000">0</div><div class="num-lbl">Tamamlanan Kurulum</div></div>
-  <div class="num-item"><div class="big-num" data-target="85">0</div><div class="num-lbl">% Fatura Tasarrufu</div></div>
-  <div class="num-item"><div class="big-num" data-target="10">0</div><div class="num-lbl">Yıllık Deneyim</div></div>
-  <div class="num-item"><div class="big-num" data-target="5">0</div><div class="num-lbl">Yılda Amortisman</div></div>
+<section class="svcs" id="svcs">
+  <span class="stag">Hizmetlerimiz</span>
+  <h2 class="sh2 reveal">Uzman Kadromuzla<br>Yanınızdayız</h2>
+  <div class="sg reveal">
+    <div class="sc"><div class="si-ico">⚡</div><div class="sn">Çatı Güneş Paneli</div><div class="sd">Profesyonel ekibimizle en yüksek kalite standartlarında hizmet sunuyoruz.</div></div>
+    <div class="sc"><div class="si-ico">🔋</div><div class="sn">Depolama Sistemleri</div><div class="sd">Sektör deneyimimiz ve teknolojik altyapımızla fark yaratıyoruz.</div></div>
+    <div class="sc"><div class="si-ico">🔧</div><div class="sn">Bakım & Servis</div><div class="sd">Müşteri memnuniyetini her zaman ön planda tutarak çalışıyoruz.</div></div>
+  </div>
+</section>
+<div class="stats">
+  <div class="sti reveal"><div class="stN" data-target="5000">0</div><div class="stL">Kurulum Yapıldı</div></div>
+  <div class="sti reveal"><div class="stN" data-target="25">0</div><div class="stL">Yıl Garanti</div></div>
+  <div class="sti reveal"><div class="stN" data-target="98">0</div><div class="stL">% Verim</div></div>
+  <div class="sti reveal"><div class="stN" data-target="15">0</div><div class="stL">Yıl Deneyim</div></div>
 </div>
-
-<section class="why" id="why">
-  <div class="sec-label">Neden Solar?</div>
-  <h2 class="sec-h2">Güneş Enerjisinin Avantajları</h2>
-  <div class="why-grid">
-    <div class="why-item reveal"><div class="wi-num">01</div><div class="wi-icon">☀</div><h3>Sıfır Yakıt Maliyeti</h3><p>Güneş ışınları tamamen ücretsizdir. Panel kurulduktan sonra enerji maliyetiniz neredeyse sıfırlanır.</p></div>
-    <div class="why-item reveal"><div class="wi-num">02</div><div class="wi-icon">♻</div><h3>Çevre Dostu</h3><p>CO2 salımı sıfır. Karbon ayak izinizi azaltın ve sürdürülebilir bir gelecek için katkı sağlayın.</p></div>
-    <div class="why-item reveal"><div class="wi-num">03</div><div class="wi-icon">⚡</div><h3>Devlet Teşviki</h3><p>YEKA ve lisanssız üretim teşvikleri. Fazla enerjiyi TEDAŞ'a satın, ek gelir kazanın.</p></div>
-    <div class="why-item reveal"><div class="wi-num">04</div><div class="wi-icon">🔋</div><h3>Enerji Depolama</h3><p>Lityum batarya ile gece de güneş enerjisi kullanın. Şebeke kesintisinden etkilenmeyin.</p></div>
-  </div>
-</section>
-
 <section class="reviews" id="reviews">
-  <div class="sec-label">Müşterilerimiz</div>
-  <h2 class="sec-h2">Onlar Denedi, Anlattı</h2>
-  <div class="r-strip">
-    <div class="r-card reveal"><div class="r-s">★★★★★</div><p class="r-t">"Elektrik faturam 5.200 TL'den 780 TL'ye düştü. İnanılmaz tasarruf. Kesinlikle öneririm."</p><div class="r-n">Tarık B. — Fabrika Sahibi</div></div>
-    <div class="r-card reveal"><div class="r-s">★★★★★</div><p class="r-t">"Kurulum 2 günde tamamlandı. Ekip çok profesyonel, teşvik belgelerini de hallettiler."</p><div class="r-n">Gülsüm A. — Ev Sahibi</div></div>
-    <div class="r-card reveal"><div class="r-s">★★★★★</div><p class="r-t">"4.5 yılda sistem kendini amorti etti. Şimdi TEDAŞ'a enerji satıyorum. Harika yatırım."</p><div class="r-n">Serkan K. — Çiftçi</div></div>
+  <span class="stag">Yorumlar</span>
+  <h2 class="sh2 reveal">Müşterilerimiz Anlattı</h2>
+  <div class="rg">
+    <div class="rc reveal"><div class="rs">★★★★★</div><p class="rt">"Elektrik faturam 0 TL oldu. Yatırım kendini 4 yılda geri ödedi."</p><div class="rn">Villa Sahibi</div></div>
+    <div class="rc reveal"><div class="rs">★★★★★</div><p class="rt">"Enerji maliyetimizi %70 düşürdük. Mükemmel profesyonel ekip."</p><div class="rn">Fabrika Müdürü</div></div>
+    <div class="rc reveal"><div class="rs">★★★★★</div><p class="rt">"Sulama sistemimiz artık tamamen güneş enerjisiyle çalışıyor."</p><div class="rn">Çiftlik Sahibi</div></div>
   </div>
 </section>
-
 <section class="faq" id="faq">
-  <div class="sec-label">Merak Edilenler</div>
-  <h2 class="sec-h2">Sık Sorulan Sorular</h2>
-  <div class="faq-wrap">
-    <div class="fi"><button class="fq" onclick="faq(this)"><span>Kurulum ne kadar sürer?</span><span class="ico">+</span></button><div class="fa">Konut sistemleri 1–2 gün, sanayi tesisleri 3–7 gün içinde tamamlanır.</div></div>
-    <div class="fi"><button class="fq" onclick="faq(this)"><span>Bulutlu havada ne olur?</span><span class="ico">+</span></button><div class="fa">Paneller difüz ışıkta da çalışır. Yağmurlu günlerde %20–30 verim elde edilir.</div></div>
-    <div class="fi"><button class="fq" onclick="faq(this)"><span>Garanti süresi ne kadar?</span><span class="ico">+</span></button><div class="fa">Panel üretim garantisi 25 yıl, inverter garantisi 10 yıl, işçilik garantisi 5 yıldır.</div></div>
+  <span class="stag">SSS</span>
+  <h2 class="sh2 reveal">Sık Sorulan Sorular</h2>
+  <div class="fw">
+    <div class="fi"><button class="fq" onclick="fq(this)"><span>Kurulum ne kadar sürer?</span><div class="ic">+</div></button><div class="fa">Konut sistemleri 1-2 günde, ticari sistemler 3-7 günde kurulur.</div></div>
+    <div class="fi"><button class="fq" onclick="fq(this)"><span>Elektrik şebekesine bağlı kalabilir miyim?</span><div class="ic">+</div></button><div class="fa">Evet, hibrit sistemle hem depolama hem de şebekeye satış yapabilirsiniz.</div></div>
+    <div class="fi"><button class="fq" onclick="fq(this)"><span>Teklif almak için ne yapmalıyım?</span><div class="ic">+</div></button><div class="fa">Aşağıdaki iletişim formunu doldurun veya telefon numaramızı arayın. Ekibimiz 24 saat içinde size ulaşır.</div></div>
   </div>
 </section>
-
-<div class="cta-band">
-  <h2>Faturanızı sıfırlayalım.</h2>
-  <a href="#contact">Ücretsiz Enerji Analizi →</a>
-</div>
-
+<section class="cta"><h2>Elektrik Faturanızı Sıfırlayın</h2><p>25 yıl garanti, 4 yılda kendini amorti eder.</p><a href="#contact" class="bc">Hemen İletişime Geç →</a></section>
 <section class="contact" id="contact">
-  <div class="sec-label" style="text-align:center">İletişim</div>
-  <h2 class="sec-h2" style="text-align:center">Keşif Randevusu Alın</h2>
+  <span class="stag" style="display:block;text-align:center">İletişim</span>
+  <h2 class="sh2" style="text-align:center">Bize Ulaşın</h2>
   <div class="cg">
-    <div class="ci reveal">
-      <h3>Bilgilerimiz</h3>
-      <p><strong>Firma:</strong> SunPower Enerji A.Ş.<br>
-      <strong>Tel:</strong> 0850 XXX XX XX<br>
-      <strong>E-posta:</strong> info@sunpower.com.tr<br>
-      <strong>Adres:</strong> İstanbul, Türkiye</p>
-    </div>
-    <div class="reveal">
-      <input type="text" placeholder="Adınız Soyadınız">
-      <input type="tel" placeholder="Telefon">
-      <input type="text" placeholder="Çatı tipi / m²">
-      <textarea placeholder="Mevcut aylık fatura tutarınız..."></textarea>
-      <button type="submit">Keşif Talep Et ☀</button>
-    </div>
+    <div class="ci reveal"><h3>İletişim Bilgileri</h3><p><strong>Telefon:</strong> 0XXX XXX XX XX<br><strong>E-posta:</strong> info@solar-enerji.com.tr<br><strong>Adres:</strong> İstanbul, Türkiye<br><strong>Mesai:</strong> Pzt–Cum 09:00–18:00</p></div>
+    <div class="reveal"><input type="text" placeholder="Adınız Soyadınız"><input type="tel" placeholder="Telefon"><textarea placeholder="Mesajınız..."></textarea><button type="submit">Gönder →</button></div>
   </div>
 </section>
-
-<footer>
-  <div class="fl">SunPower ☀</div>
-  <p>© 2026 SunPower Enerji. Tüm hakları saklıdır.</p>
-</footer>
-
+<footer><div class="fl">SolarTech<span>Enerji</span></div><p>© 2026 SolarTech Enerji. Tüm hakları saklıdır.</p></footer>
 <nav class="mnav">
-  <a href="#why" class="mi active"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>Avantaj</a>
-  <a href="#reviews" class="mi"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Referans</a>
-  <a href="#faq" class="mi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>SSS</a>
-  <a href="#contact" class="mi"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.8 19.8 0 013.07 10.8"/></svg>İletişim</a>
+  <a href="#svcs" class="mi active"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Hizmet</a>
+  <a href="#reviews" class="mi"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Yorum</a>
+  <a href="#faq" class="mi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/></svg>SSS</a>
+  <a href="#contact" class="mi"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07"/></svg>İletişim</a>
 </nav>
-
 <script>
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.12});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')});},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-const obs2=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){
+const o2=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){
   document.querySelectorAll('[data-target]').forEach(el=>{const t=+el.dataset.target;let s=null;
-    const step=ts=>{if(!s)s=ts;const p=Math.min((ts-s)/1400,1),v=Math.round((1-Math.pow(1-p,3))*t);
-      el.textContent=v;if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);});
-  obs2.disconnect();}})},{threshold:.4});
-const nb=document.querySelector('.numbers');if(nb)obs2.observe(nb);
+    const step=ts=>{if(!s)s=ts;const p=Math.min((ts-s)/1200,1),v=Math.round((1-Math.pow(1-p,3))*t);
+    el.textContent=v;if(p<1)requestAnimationFrame(step);};requestAnimationFrame(step);});
+  o2.disconnect();}});},{threshold:.4});
+const sb=document.querySelector('.stats');if(sb)o2.observe(sb);
 document.querySelectorAll('.mi').forEach(m=>{m.addEventListener('click',()=>{document.querySelectorAll('.mi').forEach(x=>x.classList.remove('active'));m.classList.add('active');});});
-function faq(b){const a=b.nextElementSibling,o=b.classList.contains('open');
+function fq(b){const a=b.nextElementSibling,o=b.classList.contains('open');
   document.querySelectorAll('.fq.open').forEach(x=>{x.classList.remove('open');x.nextElementSibling.classList.remove('open');});
   if(!o){b.classList.add('open');a.classList.add('open');}}
-</script>
-</body>
-</html>
+</script></body></html>
